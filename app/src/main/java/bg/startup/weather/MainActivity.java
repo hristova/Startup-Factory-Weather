@@ -1,7 +1,7 @@
 package bg.startup.weather;
 
 import android.graphics.drawable.Drawable;
-import android.os.Bundle;
+import android.os.*;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
@@ -10,7 +10,6 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private ListView listView;
-    private ArrayList<City> listCities;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,15 +17,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         listView = (ListView) findViewById(R.id.list_view);
-        generateCities();
-        listView.setAdapter(new CityAdapter(this, listCities));
+
+        new LoadCitiesTask().execute();
+
     }
 
-    private void generateCities() {
+    private ArrayList<City> generateCities() {
 
         Drawable icon = getResources().getDrawable(R.mipmap.ic_launcher);
 
-        listCities = new ArrayList<>();
+        ArrayList<City> listCities = new ArrayList<>();
         City city1 = new City();
         city1.setName("Sofia");
         city1.setIcon(icon);
@@ -66,6 +66,26 @@ public class MainActivity extends AppCompatActivity {
         listCities.add(city4);
         listCities.add(city4);
 
+        return listCities;
+
+    }
+
+    private void loadCities(ArrayList<City> listCities) {
+        listView.setAdapter(new CityAdapter(this, listCities));
+    }
+
+    public class LoadCitiesTask extends AsyncTask<Void, Void, ArrayList<City>> {
+
+        @Override
+        protected ArrayList<City> doInBackground(Void... params) {
+            return generateCities();
+        }
+
+        @Override
+        protected void onPostExecute(ArrayList<City> cities) {
+            super.onPostExecute(cities);
+            loadCities(cities);
+        }
     }
 
 }
