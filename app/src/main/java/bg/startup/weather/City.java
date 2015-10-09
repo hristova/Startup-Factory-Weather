@@ -6,6 +6,15 @@ public class City {
 
     private Drawable icon;
     private String name;
+    private String country;
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
 
     public Drawable getIcon() {
         return icon;

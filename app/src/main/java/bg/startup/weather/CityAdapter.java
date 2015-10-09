@@ -30,6 +30,7 @@ public class CityAdapter extends ArrayAdapter<City> {
 
             holder.icon = (ImageView) convertView.findViewById(R.id.icon);
             holder.name = (TextView) convertView.findViewById(R.id.text);
+            holder.country = (TextView) convertView.findViewById(R.id.text_country);
 
             convertView.setTag(holder);
         } else {
@@ -39,6 +40,7 @@ public class CityAdapter extends ArrayAdapter<City> {
         City city = cities.get(position);
         holder.icon.setImageDrawable(city.getIcon());
         holder.name.setText(city.getName());
+        holder.country.setText(city.getCountry());
 
         return convertView;
     }
@@ -51,5 +53,6 @@ public class CityAdapter extends ArrayAdapter<City> {
     public static class ViewHolder {
         ImageView icon;
         TextView name;
+        TextView country;
     }
 }

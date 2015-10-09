@@ -16,22 +16,22 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new RecyclerCityAdapter(this, initializeCities()));
+        //recyclerView.setAdapter(new RecyclerCityAdapter(this, initializeCities()));
 
     }
 
-    private ArrayList<City> initializeCities() {
-        String[] cities = {"London", "Sofia", "New York", "Athens", "Belgrade", "Bucharest", "Skopje",
-                "Berlin", "Helsinki", "Rome", "Madrid", "Lisbon", "Riga", "Kiev"};
-        Drawable icon = getResources().getDrawable(R.mipmap.ic_launcher);
-        ArrayList<City> listCities = new ArrayList<>();
-        for (String city : cities) {
-            City newCity = new City();
-            newCity.setName(city);
-            newCity.setIcon(icon);
-            listCities.add(newCity);
-        }
-
-        return listCities;
-    }
+//    private ArrayList<City> initializeCities() {
+//        String[] cities = {"London", "Sofia", "New York", "Athens", "Belgrade", "Bucharest", "Skopje",
+//                "Berlin", "Helsinki", "Rome", "Madrid", "Lisbon", "Riga", "Kiev"};
+//        Drawable icon = getResources().getDrawable(R.mipmap.ic_launcher);
+//        ArrayList<City> listCities = new ArrayList<>();
+//        for (String city : cities) {
+//            City newCity = new City();
+//            newCity.setName(city);
+//            newCity.setIcon(icon);
+//            listCities.add(newCity);
+//        }
+//
+//        return listCities;
+//    }
 }
