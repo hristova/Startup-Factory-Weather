@@ -1,8 +1,10 @@
 package bg.startup.weather;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ListView;
+import android.view.View;
+import android.widget.*;
 
 import java.util.ArrayList;
 
@@ -18,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.list_view);
 
-        //new LoadCitiesTask().execute();
         new GetCitiesTask() {
             @Override
             protected void onPostExecute(ArrayList<City> cities) {
@@ -29,56 +30,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-//    private ArrayList<City> generateCities() {
-//
-//        Drawable icon = getResources().getDrawable(R.mipmap.ic_launcher);
-//
-//        ArrayList<City> listCities = new ArrayList<>();
-//        City city1 = new City();
-//        city1.setName("Sofia");
-//        city1.setIcon(icon);
-//        listCities.add(city1);
-//
-//        City city2 = new City();
-//        city2.setName("London");
-//        city2.setIcon(icon);
-//        listCities.add(city2);
-//
-//        City city3 = new City();
-//        city3.setName("Madrid");
-//        city3.setIcon(icon);
-//        listCities.add(city3);
-//
-//        City city4 = new City();
-//        city4.setName("Paris");
-//        city4.setIcon(icon);
-//        listCities.add(city4);
-//
-//        listCities.add(city1);
-//        listCities.add(city1);
-//        listCities.add(city2);
-//        listCities.add(city2);
-//        listCities.add(city2);
-//        listCities.add(city2);
-//        listCities.add(city2);
-//        listCities.add(city3);
-//        listCities.add(city3);
-//        listCities.add(city3);
-//        listCities.add(city3);
-//        listCities.add(city3);
-//        listCities.add(city4);
-//        listCities.add(city4);
-//        listCities.add(city4);
-//        listCities.add(city4);
-//        listCities.add(city4);
-//        listCities.add(city4);
-//
-//        return listCities;
-//
-//    }
 
-    private void loadCities(ArrayList<City> listCities) {
+    private void loadCities(final ArrayList<City> listCities) {
         listView.setAdapter(new CityAdapter(this, listCities));
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                City city = listCities.get(position);
+
+                Intent intent = new Intent(MainActivity.this, WeatherActivity.class);
+                intent.putExtra("name", city.getName());
+                startActivity(intent);
+
+            }
+        });
     }
 
 }
