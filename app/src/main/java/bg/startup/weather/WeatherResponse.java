@@ -180,6 +180,7 @@ public class WeatherResponse {
         }
     }
 
+
     private class Clouds {
         double all;
     }

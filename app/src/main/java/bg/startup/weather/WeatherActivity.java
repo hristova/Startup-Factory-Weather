@@ -10,6 +10,7 @@ import android.widget.*;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
+
 public class WeatherActivity extends AppCompatActivity {
 
     private static final String API = "http://api.openweathermap.org/data/2.5/weather?q=";
@@ -33,10 +34,12 @@ public class WeatherActivity extends AppCompatActivity {
                     @Override
                     protected void onPostExecute(WeatherResponse weatherResponse) {
                         super.onPostExecute(weatherResponse);
+
                         if (weatherResponse != null) {
-                            weather  = weatherResponse;
+                            weather = weatherResponse;
                             loadWeather(weatherResponse);
                         }
+
                     }
                 }.execute(url);
             } catch (UnsupportedEncodingException e) {
