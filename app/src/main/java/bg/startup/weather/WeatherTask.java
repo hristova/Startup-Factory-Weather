@@ -8,9 +8,11 @@ import com.google.gson.Gson;
 import java.io.*;
 import java.net.*;
 
-public class WeatherTask extends AsyncTask<String, Void, Void> {
+public class WeatherTask extends AsyncTask<String, Void, WeatherResponse> {
     @Override
-    protected Void doInBackground(String... params) {
+    protected WeatherResponse doInBackground(String... params) {
+
+        WeatherResponse weatherResponse = null;
 
         try {
             URL url = new URL(params[0]);
@@ -32,16 +34,15 @@ public class WeatherTask extends AsyncTask<String, Void, Void> {
 
             String data = stringBuilder.toString();
 
-
             Gson gson = new Gson();
-            WeatherResponse weatherResponse = gson.fromJson(data, WeatherResponse.class);
-            Log.i("Weather", "Coords = " + weatherResponse.getCoords());
+            weatherResponse = gson.fromJson(data, WeatherResponse.class);
+            Log.i("Weather", "Weather response: " + weatherResponse);
 
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        return null;
+        return weatherResponse;
     }
 
 }

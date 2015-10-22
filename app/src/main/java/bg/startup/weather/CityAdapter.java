@@ -1,7 +1,6 @@
 package bg.startup.weather;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.*;
 import android.widget.*;
 
@@ -26,7 +25,6 @@ public class CityAdapter extends ArrayAdapter<City> {
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.item_list_view, null, true);
             holder = new ViewHolder();
-            Log.i("Weather", "Adapter: Inflate, position=" + position);
 
             holder.icon = (ImageView) convertView.findViewById(R.id.icon);
             holder.name = (TextView) convertView.findViewById(R.id.text);
