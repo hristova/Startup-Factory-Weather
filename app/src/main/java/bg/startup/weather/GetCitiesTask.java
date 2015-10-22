@@ -1,7 +1,6 @@
 package bg.startup.weather;
 
 import android.os.AsyncTask;
-import android.util.Log;
 
 import org.json.*;
 
@@ -35,13 +34,11 @@ public class GetCitiesTask extends AsyncTask<String, Void, ArrayList<City>> {
 
             String data = stringBuilder.toString();
             JSONArray jsonArray = new JSONArray(data);
-            Log.i("Weather", "Size = " + jsonArray.length());
 
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 String country = jsonObject.getString("country");
                 String capital = jsonObject.getString("capital");
-                Log.i("Weather", capital + "," + country);
                 City city = new City();
                 city.setName(capital);
                 city.setCountry(country);
@@ -52,7 +49,6 @@ public class GetCitiesTask extends AsyncTask<String, Void, ArrayList<City>> {
             e.printStackTrace();
         }
 
-        Log.i("Weather", "Size = " + list.size());
         return list;
     }
 

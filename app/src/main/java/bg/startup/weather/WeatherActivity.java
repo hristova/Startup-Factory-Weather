@@ -3,7 +3,6 @@ package bg.startup.weather;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -21,17 +20,25 @@ public class WeatherActivity extends AppCompatActivity {
         Intent intent = getIntent();
         if (intent.hasExtra("name")) {
             String name = intent.getStringExtra("name");
-            Log.i("Weather", "Intent extra = " + name);
 
             try {
                 String encodedName = URLEncoder.encode(name, "utf-8");
                 String url = API + encodedName + KEY;
-                new WeatherTask().execute(url);
+                new WeatherTask() {
+                    @Override
+                    protected void onPostExecute(WeatherResponse weatherResponse) {
+                        super.onPostExecute(weatherResponse);
+                        loadWeather(weatherResponse);
+                    }
+                }.execute(url);
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
 
-
         }
+    }
+
+    private void loadWeather(WeatherResponse weatherResponse) {
+
     }
 }
