@@ -18,8 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/margin"
             android:contentDescription="weather_icon"
-            android:scaleType="center"
-            android:src="@drawable/i09d"/>
+            android:scaleType="center"/>
 
         <TextView
             android:id="@+id/text_city_name"
@@ -57,7 +56,6 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:text="@string/degree_celsius"
                 android:textSize="@dimen/text_size_medium"/>
 
             <Button
@@ -66,7 +64,6 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:text="@string/degree_fahrenheit"
                 android:textSize="@dimen/text_size_medium"/>
 
 
