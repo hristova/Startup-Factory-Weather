@@ -26,9 +26,9 @@ public class WeatherActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_weather);
+        setContentView(R.layout.activity_weather);
 
-        typeface = Typeface.createFromAsset(getResources().getAssets(), "fonts/Sofia-Regular.otf");
+        typeface = Typeface.createFromAsset(getResources().getAssets(), "fonts/Sunday-Regular.otf");
 
         Intent intent = getIntent();
         if (intent.hasExtra("name")) {

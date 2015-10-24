@@ -20,7 +20,7 @@ public class CityAdapter extends ArrayAdapter<City> {
         super(context, R.layout.item_list_view);
         this.context = context;
         cities = listCities;
-        typeface = Typeface.createFromAsset(context.getAssets(), "fonts/Sunday-Regular.otf");
+        typeface = Typeface.createFromAsset(context.getAssets(), "fonts/Sofia-Regular.otf");
     }
 
     @Override
