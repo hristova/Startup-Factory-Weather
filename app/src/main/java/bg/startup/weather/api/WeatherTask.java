@@ -1,4 +1,4 @@
-package bg.startup.weather;
+package bg.startup.weather.api;
 
 import android.os.AsyncTask;
 import android.util.Log;
@@ -7,6 +7,8 @@ import com.google.gson.Gson;
 
 import java.io.*;
 import java.net.*;
+
+import bg.startup.weather.model.WeatherResponse;
 
 public class WeatherTask extends AsyncTask<String, Void, WeatherResponse> {
     @Override

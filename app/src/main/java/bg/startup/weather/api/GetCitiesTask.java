@@ -1,4 +1,4 @@
-package bg.startup.weather;
+package bg.startup.weather.api;
 
 import android.os.AsyncTask;
 
@@ -7,6 +7,8 @@ import org.json.*;
 import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
+
+import bg.startup.weather.model.City;
 
 public class GetCitiesTask extends AsyncTask<String, Void, ArrayList<City>> {
     @Override

@@ -1,4 +1,4 @@
-package bg.startup.weather;
+package bg.startup.weather.activity;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.*;
 
 import java.util.ArrayList;
+
+import bg.startup.weather.R;
 
 public class RecyclerViewActivity extends AppCompatActivity {
 

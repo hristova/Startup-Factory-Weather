@@ -1,4 +1,4 @@
-package bg.startup.weather;
+package bg.startup.weather.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,11 @@ import android.view.View;
 import android.widget.*;
 
 import java.util.ArrayList;
+
+import bg.startup.weather.R;
+import bg.startup.weather.adapter.CityAdapter;
+import bg.startup.weather.api.GetCitiesTask;
+import bg.startup.weather.model.City;
 
 public class MainActivity extends AppCompatActivity {
 

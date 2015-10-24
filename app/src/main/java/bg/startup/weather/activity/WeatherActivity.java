@@ -1,4 +1,4 @@
-package bg.startup.weather;
+package bg.startup.weather.activity;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -9,6 +9,10 @@ import android.widget.*;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+
+import bg.startup.weather.R;
+import bg.startup.weather.api.WeatherTask;
+import bg.startup.weather.model.WeatherResponse;
 
 
 public class WeatherActivity extends AppCompatActivity {

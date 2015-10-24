@@ -1,4 +1,4 @@
-package bg.startup.weather;
+package bg.startup.weather.adapter;
 
 import android.content.Context;
 import android.graphics.Typeface;
@@ -6,6 +6,9 @@ import android.view.*;
 import android.widget.*;
 
 import java.util.ArrayList;
+
+import bg.startup.weather.R;
+import bg.startup.weather.model.City;
 
 public class CityAdapter extends ArrayAdapter<City> {
 

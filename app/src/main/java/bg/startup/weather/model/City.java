@@ -1,4 +1,4 @@
-package bg.startup.weather;
+package bg.startup.weather.model;
 
 import android.graphics.drawable.Drawable;
 

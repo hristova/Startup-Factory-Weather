@@ -1,4 +1,4 @@
-package bg.startup.weather;
+package bg.startup.weather.model;
 
 import com.google.gson.annotations.SerializedName;
 
