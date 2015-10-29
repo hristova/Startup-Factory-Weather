@@ -18,7 +18,7 @@ import bg.startup.weather.model.WeatherResponse;
 public class WeatherActivity extends AppCompatActivity {
 
     private static final String API = "http://api.openweathermap.org/data/2.5/weather?q=";
-    private static final String KEY = "&appid=bd82977b86bf27fb59a04b61b657fb6f";
+    private static final String KEY = "&appid=299a49f6c5c51d349aee863f7a27642f";
 
     private Typeface typeface;
     private WeatherResponse weather;
